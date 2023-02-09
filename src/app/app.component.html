@@ -1,0 +1,129 @@
+<style>
+  h1,
+  h6 {
+    margin: 8px 0;
+  }
+
+  .head {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #79bec2;
+    color: rgba(6, 17, 36, 0.61);
+    font-weight: 600;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eccfec;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .cards {
+    border-radius: 4px;
+    border: 1px solid #eccfec;
+    background-color: #fafafa;
+    height: 400px;
+    width: 700px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card.highlight-card {
+    background-color: #6fc9c9;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  span,
+  span:visited,
+  span:hover {
+    color: #f8436b;
+    text-decoration: none;
+  }
+
+  span:hover {
+    color: #33142c;
+  }
+</style>
+
+<div class="head">
+  <h1>Welcome</h1>
+</div>
+
+<div class="content">
+  <div class="card highlight-card card-small">
+    <span>{{ title }} example is running</span>
+  </div>
+  <div class="card-container">
+    <span class="card">Single slot</span>
+    <span class="card">Multi slot</span>
+  </div>
+
+  <div class="card-container">
+    <div class="cards">
+      <app-child [items]="products">
+        <h1 class="header">Upto 70% off...</h1>
+        <a href="" class="link">Visit store..</a>
+      </app-child>
+    </div>
+    <div class="cards">
+      <app-child [items]="bakery">
+        <h1 class="header">Get fresh bakery items...</h1>
+        <a href="" class="link">See more..</a>
+      </app-child>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

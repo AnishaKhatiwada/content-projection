@@ -1,0 +1,11 @@
+<div>
+    <ng-content select=".header"></ng-content>
+    <ul *ngFor="let item of items">
+        <span>
+            <strong>{{item.name}}</strong>&nbsp;
+            <strong>Price:</strong>{{item.price}}&nbsp;
+            <strong>Status:</strong>{{item.status}}
+        </span>
+    </ul>
+    <ng-content select=".link"></ng-content>
+</div>
